@@ -9,7 +9,7 @@ export default function App() {
   const [isFontLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold})
   return (
     <GluestackUIProvider config={config}>
-      <View style={{ flex: 1, backgroundColor: '#202024', alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{ flex: 1, backgroundColor: '#202024'}}>
         <StatusBar barStyle="light-content" backgroundColor="transparent" translucent/>
         {isFontLoaded ? <SignIn/> : <Loading/>}
       </View>
