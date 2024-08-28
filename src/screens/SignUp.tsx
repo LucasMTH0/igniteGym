@@ -1,20 +1,20 @@
 import { VStack, Image, Center, Text, Heading, ScrollView } from "@gluestack-ui/themed";
-import BackgroundImage from "@assets/background.png";
-
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 import { HeaderLogo } from "@components/HeaderLogo";
 import { Background } from "@components/Background";
-export function SignIn() {
+export function SignUp() {
     return (
         <ScrollView contentContainerStyle={{ flex: 1}} showsVerticalScrollIndicator={false}>
             <VStack flex={1}>
                 <Background/>
                 <VStack flex={1} px="$10" pb="$16">
                     <HeaderLogo/>
-    
-                    <Center gap="$2">
+                    <Center gap="$2" flex={1}>
                         <Heading color="$trueGray100">Acesse sua conta</Heading>
+                        <Input 
+                            placeholder="Nome" 
+                        />
                         <Input 
                             placeholder="E-mail" 
                             keyboardType="email-address"
@@ -25,13 +25,10 @@ export function SignIn() {
                             keyboardType="numeric"
                             secureTextEntry
                         />
-                        <Button title="ACESSAR"/>
+                        <Button title="CRIAR E ACESSAR"/>
                     </Center>
     
-                    <Center flex={1} justifyContent="flex-end" mt="$4">
-                        <Text color="$trueGray100" fontSize="$sm" mb="$3" fontFamily="$body">Ainda não tem acesso ?</Text>
-                        <Button title="Criar conta" variant="outline"/>
-                    </Center>
+                    <Button title="Voltar" mt="$12" variant="outline"/>
                 </VStack>
     
             </VStack>
