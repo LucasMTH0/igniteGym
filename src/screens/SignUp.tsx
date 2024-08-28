@@ -3,7 +3,14 @@ import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 import { HeaderLogo } from "@components/HeaderLogo";
 import { Background } from "@components/Background";
+import { useNavigation } from "@react-navigation/native";
+import { AuthNavigatorRoutesProp } from "@routes/auth.routes";
 export function SignUp() {
+    const navigator = useNavigation<AuthNavigatorRoutesProp>()
+
+    function handleGoBack(){
+        navigator.goBack();
+    }
     return (
         <ScrollView contentContainerStyle={{ flex: 1}} showsVerticalScrollIndicator={false}>
             <VStack flex={1}>
@@ -28,7 +35,7 @@ export function SignUp() {
                         <Button title="CRIAR E ACESSAR"/>
                     </Center>
     
-                    <Button title="Voltar" mt="$12" variant="outline"/>
+                    <Button title="Voltar" mt="$12" variant="outline" onPress={handleGoBack}/>
                 </VStack>
     
             </VStack>
